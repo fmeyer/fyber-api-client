@@ -50,21 +50,5 @@ describe Fyber do
             end
         end
     end
-
-
-    context "request orders" do
-        before do
-            Fyber.configure do |config|
-                config.appid = 123
-                config.offers_url = "http://fyber/base_uri"
-            end
-            @fyber = Fyber::Client.new
-        end
-
-        it "calls hash method" do
-            expect(Fyber).to receive(:hashkey).and_return({})
-            @fyber.offers()
-        end
-    end
 end
 

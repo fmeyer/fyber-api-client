@@ -9,15 +9,18 @@ module Fyber
             load_options(options) unless options.empty?
 
             Fyber::Client.base_uri(Fyber.config.offers_url)
+            @default_params = load_default_params
 
             raise ArgumentError, "At least appid must be present" if Fyber.config.nil? or Fyber.config.appid.nil?
         end
 
 
-        def offers
-            params = {}
-            params.merge(Fyber.hashkey(params))
-            self.class.get("/offers.json", query: params )
+        def offers(request_params)
+
+            request_params.merge!(@default_params)
+            request_params.merge!({:hashkey => Fyber.hashkey(request_params)})
+
+            self.class.get("/offers.json", query: request_params )
         end
 
 
@@ -33,6 +36,17 @@ module Fyber
 
                 config.offers_url = options[:offers_url]
             end
+        end
+
+        def load_default_params
+            {
+                appid: Fyber.config.appid,
+                device_id: Fyber.config.device_id,
+                idp: Fyber.config.ip,
+                offer_types: Fyber.config.offer_types,
+                api_key: Fyber.config.api_key,
+                timestamp: Time.now.to_i,
+            }
         end
     end
 end
