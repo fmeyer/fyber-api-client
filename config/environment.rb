@@ -29,3 +29,12 @@ Dir[APP_ROOT.join('lib', '**' ,'*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
+
+configure do
+  enable :sessions
+  set :session_secret, ENV['SESSION_SECRET'] || '1ee391a8e0305103fdabfe8679a47e3096b9458ead72068135c1b6a5faaf9209'
+
+  # Set the views to
+  set :views, File.join(APP_ROOT, "app", "views")
+end
+
