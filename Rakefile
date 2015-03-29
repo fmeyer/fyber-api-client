@@ -1,5 +1,3 @@
-require ::File.expand_path('../config/environment', __FILE__)
-
 require 'rspec/core/rake_task'
 require 'rspec-rerun'
 
