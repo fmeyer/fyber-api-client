@@ -1,0 +1,15 @@
+<h1>Offers</h1>
+
+<% if @offers.empty? %>
+  <div class="no_offers">
+    No offers
+  </div>
+<% end %>  
+<% else %>
+  <% @offers.each do |o| %>
+	<div class="offer">
+		<div class="title"><%= offer['title'] %></div>
+		<div class="payout"><%= offer['payout'] %></div>
+		<div class="thumbnail"><%= offer['thumbnail']['lowres'] %></div>
+	</div>
+<% end %>

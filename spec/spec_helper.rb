@@ -1,4 +1,9 @@
-require File.expand_path(File.dirname(__FILE__) + "/../config/enviroment.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../config/environment.rb")
+
+require 'capybara'
+require 'capybara/rspec'
+require 'capybara/cucumber'
+require 'rspec'
 
 RSpec.configure do |config|
     config.expect_with :rspec do |expectations|
