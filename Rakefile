@@ -1,4 +1,5 @@
 require ::File.expand_path('../config/environment', __FILE__)
+
 require 'rspec/core/rake_task'
 
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize
