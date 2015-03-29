@@ -39,6 +39,10 @@ module Fyber
     end
 
     class Offer
+
+        attr_accessor   :title, :offer_id, :teaser, :required_actions, :link, :payout, :store_id, :offer_types,
+                        :time_to_payout, :thumbnail
+
         def initialize(response)
             @title              = response.fetch("title")
             @offer_id           = response.fetch("offer_id")

@@ -56,6 +56,12 @@ describe Fyber::Response do
             expect(offer.offer_id).to eq(298388)
           end
 
+          it "should respond to []" do
+            offer = @response[0]
+            expect(offer).to be_an_instance_of(Fyber::Offer)
+            expect(offer.offer_id).to eq(298388)            
+          end
+
           it "should not be empty" do 
             expect(@response.empty?).to be false
           end
