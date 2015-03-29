@@ -28,9 +28,11 @@ Fyber::Configuration => Handles the fyber module configuration, predefined reque
 Fyber::Client => Handles a simple connection with fyber backend to perform actions
 Fyber::Response => Parses the offers data into a acessible nested structure
 
-### Hidden interfaces
 
-Fyber::Client
+### Little retrospective
+
+-	I woudn't use sinatra, I spend a lot of time configuring this little bastard
+-	I should have paid more attention to integration test
 
 
 TODO: not remaining time unfortunatelly 
