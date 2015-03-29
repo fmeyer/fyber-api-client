@@ -25,7 +25,12 @@ group :development, :test do
     gem 'rspec-rerun'
     gem 'rspec-legacy_formatters'
 
-    gem 'selenium-webdriver'
+    gem 'guard'
+    gem 'guard-rspec'
+    gem 'guard-livereload'
+
+    gem 'rack-livereload'
+
 
     gem 'simplecov', :require => false
 end
