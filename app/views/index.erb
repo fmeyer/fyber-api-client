@@ -1,8 +1,23 @@
-<h1>Fyber API Client</h1>
+<form id="form_get_offers" class="bootstrap-frm" accept-charset="UTF-8" action="/offers" method="post">
+    <h1>FyberAPI Client
+        <span>Please fill all the texts in the fields.</span>
+    </h1>
+    <label>
+        <span>UID :</span>
+        <input id="offers_uid"  name="offers[uid]" placeholder="uid" type="text" />
+    </label>
 
-<form id="form_get_offers" class="simpleform" accept-charset="UTF-8" action="/offers" method="post">
-  <input id="offers_uid"  name="offers[uid]" placeholder="uid" type="text" />
-  <input id="offers_pub0" name="offers[pub0]" placeholder="pub0" type="text" />
-  <input id="offers_page" name="offers[page]" placeholder="page" type="text" />
-  <input name="commit" type="submit" value="Get offers" />
+    <label>
+        <span>Pub0 :</span>
+        <input id="offers_pub0" name="offers[pub0]" placeholder="pub0" type="text" />
+    </label>
+
+    <label>
+        <span>Page</span>
+        <input id="offers_page" name="offers[page]" placeholder="page" type="text" />
+    </label>
+     <label>
+        <span>&nbsp;</span>
+        <input type="submit" class="button" value="Get offers" />
+    </label>
 </form>
