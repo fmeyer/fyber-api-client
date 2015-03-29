@@ -5,7 +5,7 @@ module Fyber
 
         def initialize(response)
             load_response_header(response)
-            load_response_offers(response) unless response.fetch("offers").empty?
+            load_response_offers(response) unless response["offers"].nil?
         end
 
         def each(*args, &block)

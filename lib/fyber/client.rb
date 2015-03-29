@@ -15,10 +15,10 @@ module Fyber
         end
 
 
-        def offers(request_params)
+        def request_offers(request_params)
             request_params.merge!(@default_params)
             request_params.merge!({:hashkey => Fyber.hashkey(request_params)})
-            self.class.get("/offers.json", query: request_params )
+            Fyber::Response.new(self.class.get("/offers.json", query: request_params))
         end
 
 

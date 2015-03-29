@@ -48,12 +48,18 @@ describe Fyber::Client do
                       :api_key=>"b07a12df7d52e6c118e5d47d3f9e60135b109a1f",
                       :timestamp=> 1427612580,
                       :hashkey=>"870f9d794807fa17b19d401935365a85d7822e3a"}
+
+            @fixture = {"code" => "OK", "message"=> "Ok", "count"=>1, "pages"=>1,
+                        "information"=>  {"app_name"=>"Demo iframe for publisher - do not touch",
+                                     "appid"=>157, "virtual_currency"=>"Coins", "country"=>"BR",
+                                     "language"=>"EN",
+                                     "support_url"=>"http://api.sponsorpay.com/support?appid=157&feed=on&mobile=on&uid=player"}}
         end
 
         it "calls hash method" do
-            expect(Fyber::Client).to receive(:get).with('/offers.json', :query => @query ).and_return({})
+            expect(Fyber::Client).to receive(:get).with('/offers.json', :query => @query ).and_return(@fixture)
 
-            @fyber.offers(@form_params)
+            @fyber.request_offers(@form_params)
         end
     end
 end
