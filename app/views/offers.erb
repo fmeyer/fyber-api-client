@@ -3,17 +3,17 @@
     <span>Display offers from FibersAPI</span>
 </h1>
 
-<% if @offers.empty? %>
+<% if @fyber_response.empty? %>
     <div class="no_offers">
         No offers
     </div>
-<% end %>
 <% else %>
-    <% @offers.each do |offer| %>
+    <% @fyber_response.offers.each do |offer| %>
         <div class="offer">
-            <div class="title"><%= offer['title'] %></div>
-            <div class="payout"><%= offer['payout'] %></div>
-            <div class="thumbnail"><%= offer['thumbnail']['lowres'] %></div>
+            <div class="title"><%= offer.title %></div>
+            <div class="payout"><%= offer.payout %></div>
+            <div class="thumbnail"><%= offer.thumbnail.lowres %></div>
         </div>
     <% end %>
+<% end %>
 </div>

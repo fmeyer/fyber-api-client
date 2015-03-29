@@ -1,7 +1,10 @@
-post '/offers' do
+def load_fyber_api
+	@fyber_api ||= Fyber::Client.new
+end
 
-    # TODO: remove sample offer to fix htmllayout
-	# @offers = [{"title" => "aaa", "payout" => "bbb", "thumbnail" => "ccc"}]
-    @offers = []
+post '/offers' do
+	load_fyber_api
+	@fyber_response = @fyber_api.request_offers(params[:offers])
+	
 	erb :offers
 end

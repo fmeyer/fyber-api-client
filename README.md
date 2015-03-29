@@ -26,12 +26,14 @@ You should remind that the above method does change the Fyber config outside the
 
 Fyber::Configuration => Handles the fyber module configuration, predefined request parameters ...
 Fyber::Client => Handles a simple connection with fyber backend to perform actions
+Fyber::Response => Parses the offers data into a acessible nested structure
 
 ### Hidden interfaces
 
 Fyber::Client
 
 
-Testing
-=======
+TODO: not remaining time unfortunatelly 
+=======================================
 
+[Testing] Load fixtures from file
