@@ -16,10 +16,8 @@ module Fyber
 
 
         def offers(request_params)
-
             request_params.merge!(@default_params)
             request_params.merge!({:hashkey => Fyber.hashkey(request_params)})
-
             self.class.get("/offers.json", query: request_params )
         end
 
@@ -42,7 +40,7 @@ module Fyber
             {
                 appid: Fyber.config.appid,
                 device_id: Fyber.config.device_id,
-                idp: Fyber.config.ip,
+                ip: Fyber.config.ip,
                 offer_types: Fyber.config.offer_types,
                 api_key: Fyber.config.api_key,
                 timestamp: Time.now.to_i,
