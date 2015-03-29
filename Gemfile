@@ -25,6 +25,8 @@ group :development, :test do
     gem 'rspec-rerun'
     gem 'rspec-legacy_formatters'
 
+    gem 'selenium-webdriver'
+
     gem 'simplecov', :require => false
 end
 
