@@ -16,8 +16,7 @@ module Fyber
         params.delete_if {|k,v| k.to_s == "hashkey"} # Get all parameters and their values exept HK
 
         #The resulting hashkey is then appended to the request as a separate parameter.
-        encoded = as_url_params(ordered_params(params))
-        encoded.concat("&").concat(Fyber.config.api_key)
+        encoded = concat_fyber_api(as_url_params(ordered_params(params)))
 
         #Hash the whole resulting string, using SHA1.
         Digest::SHA1.hexdigest(encoded)
@@ -37,6 +36,10 @@ module Fyber
        params.map do |k,v|
            "#{k}=#{v}"
        end.join("&")
+    end
+
+    def self.concat_fyber_api(params)
+        params.concat("&").concat(Fyber.config.api_key)
     end
 end
 

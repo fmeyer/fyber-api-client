@@ -31,6 +31,7 @@ group :development, :test do
 
     gem 'rack-livereload'
 
+    gem 'timecop'
 
     gem 'simplecov', :require => false
 end

@@ -5,6 +5,9 @@ require 'fyber/configuration'
 describe Fyber do
 
     context "initialized with missing parameters" do
+        before do
+            Fyber.config.appid = nil
+        end
 
         it "raises ArgumentError when initialized with no options" do
             expect do
