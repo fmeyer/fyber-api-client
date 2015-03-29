@@ -25,7 +25,7 @@ You should remind that the above method does change the Fyber config outside the
 ### Public interfaces
 
 Fyber::Configuration => Handles the fyber module configuration, predefined request parameters ...
-Fyber::Client::Order => Handles a simple connection with fyber backend to perform actions
+Fyber::Client => Handles a simple connection with fyber backend to perform actions
 
 ### Hidden interfaces
 
