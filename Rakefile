@@ -1,6 +1,7 @@
 require ::File.expand_path('../config/environment', __FILE__)
 
 require 'rspec/core/rake_task'
+require 'rspec-rerun'
 
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize
 require 'active_support/core_ext'

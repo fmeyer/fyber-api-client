@@ -17,10 +17,15 @@ gem 'httparty'
 group :development, :test do 
     gem 'pry'
     gem 'web-console'
-    gem 'rspec'
     gem 'capybara'
     gem 'faker'
-  	gem 'vcr'
+    gem 'vcr'
+
+    gem 'rspec'
+    gem 'rspec-rerun'
+    gem 'rspec-legacy_formatters'
+
+    gem 'simplecov', :require => false
 end
 
 

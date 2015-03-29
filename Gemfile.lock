@@ -33,6 +33,7 @@ GEM
     daemons (1.1.9)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
     faker (1.4.3)
@@ -75,12 +76,22 @@ GEM
     rspec-expectations (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
+    rspec-legacy_formatters (1.0.0)
+      rspec-core (>= 3.0.0.beta2)
+      rspec-support (>= 3.0.0.beta2)
     rspec-mocks (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
+    rspec-rerun (0.3.0)
+      rspec
     rspec-support (3.2.2)
     shotgun (0.9)
       rack (>= 1.0)
+    simplecov (0.9.2)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.9.0)
+    simplecov-html (0.9.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -131,7 +142,10 @@ DEPENDENCIES
   pry
   rake
   rspec
+  rspec-legacy_formatters
+  rspec-rerun
   shotgun
+  simplecov
   sinatra
   sinatra-contrib
   thin

@@ -25,9 +25,7 @@ APP_NAME = APP_ROOT.basename.to_s
 
 # Set up the controllers and helpers
 
-Dir[APP_ROOT.join('lib', '**' ,'*.rb')].each do |file| 
-	require file 
-	puts file
-end
+Dir[APP_ROOT.join('lib', '**' ,'*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
+
