@@ -18,11 +18,24 @@ module Fyber
         def request_offers(request_params)
             request_params.merge!(@default_params)
             request_params.merge!({:hashkey => Fyber.hashkey(request_params)})
-            Fyber::Response.new(self.class.get("/offers.json", query: request_params))
+            
+            response = self.class.get("/offers.json", query: request_params)
+            check_fyber_response_integrity(response)
+
+            Fyber::Response.new(response)
         end
 
 
         private
+
+        def check_fyber_response_integrity(response)
+            resp_signature = response.headers['x-sponsorpay-response-signature']
+            self_signature = Digest::SHA1.hexdigest(response.body + Fyber.config.api_key)
+            if resp_signature != self_signature
+                raise Fyber::ResponseError, 'Response signature header didn\'t match'
+            end
+        end
+
         def load_options(options)
             Fyber.configure do |config|
                 config.appid = options[:appid]

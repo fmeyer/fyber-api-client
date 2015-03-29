@@ -49,11 +49,15 @@ feature 'Retrieve offers As an user I want to retrieve offers providing uid, pub
            :timestamp=>1427612580,
            :hashkey=>"cbf96d7c5984f599dcf08a844496f903c4618ed3"}
 
+
     end
 
     scenario 'when displaying at least one offer' do
 
-        expect(Fyber::Client).to receive(:get).with('/offers.json', :query => @query ).and_return(@fixture)
+
+        expect(Fyber::Client).to receive(:check_fyber_response_integrity).with(any_args)
+
+        expect(Fyber::Client).to receive(:get).with('/offers.json', :query => @query).and_return(@fixture)
 
         visit '/'
         fill_in "offers_uid",  :with => 'uid'

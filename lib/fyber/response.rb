@@ -63,6 +63,7 @@ module Fyber
         end
     end
 
+
     OfferType    = Struct.new(:offer_type_id, :readable)
     TimeToPayout = Struct.new(:amount, :readable)
     Thumbnail    = Struct.new(:lowres, :hires)
